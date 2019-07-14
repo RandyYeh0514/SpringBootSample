@@ -1,0 +1,29 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.6.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group 'test'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'example.Application'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-configuration-processor')
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
